@@ -1,0 +1,14 @@
+.ql-container {
+    height: 600px !important;
+}
+
+
+.container .ql-toolbar {
+    border: none !important;
+    border-bottom: 1px solid #ccc!important;
+}
+
+.document-name {
+    border: none;
+    outline: none;
+}

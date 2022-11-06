@@ -1,0 +1,13 @@
+.main-content{
+    position: relative;
+    top:50px;
+    max-width: 500px;
+}
+
+.signup-label{
+    min-width: 300px;
+    font-size: larger;
+    margin-top: 40px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
