@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.7.2",
+    "morgan": "^1.10.0",
+    "rotating-file-stream": "^3.0.4",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@models": "./models",
+    "@routes": "./routes",
+    "@config": "./config"
+  },
+  "author": "Mohsin Ali Farhat",
+  "license": "ISC"
+}
