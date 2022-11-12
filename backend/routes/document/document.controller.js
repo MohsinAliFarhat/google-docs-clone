@@ -25,7 +25,7 @@ router.get('/listAll', authJWT, async (req, res) => {
 
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', authJWT, async (req, res) => {
     const { title } = req.body;
 
     if (!title) res.status(400).send(new CustomError(400, 'Please include all details.'))
@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', authJWT, async (req, res) => {
     try {
         const document = await documentService.getSingleDocument(req.params.id);
         res.status(200).send(document);
