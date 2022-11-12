@@ -13,7 +13,11 @@ exports.signUp = async (name, email, password) => {
     })
     user = await user.save();
     user.password = undefined;
-    return user;
+    const token = jwt.sign({_id:user._id}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "60m" });
+    return {
+        token,
+        name:user.name
+    }
 
 }
 
