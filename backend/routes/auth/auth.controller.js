@@ -17,8 +17,17 @@ router.post('/signup', async (req, res) => {
 
 });
 
-router.post('/signin', (req, res) => {
-
+router.post('/signin', async (req, res) => {
+    const { email, password } = req.body;
+    if (email && password) {
+        try {
+            const user = await authService.signIn(email, password);
+            res.status(200).send(user);
+        } catch (ex) {
+            res.status(ex.status).send(ex);
+        }
+    }
+    else res.status(400).send(new CustomError(400, 'Please enter all details'));
 });
 
 module.exports = router;
