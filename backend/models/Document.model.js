@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const documentSchema = mongoose.Schema({
     title:String,
-    content:String,
-    createdAt:Number,
+    content:mongoose.Schema.Types.Mixed,
     userId:String
 },{ timestamps: true });
 
