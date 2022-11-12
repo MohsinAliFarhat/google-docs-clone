@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
             const user = await authService.signUp(name, email, password);
             res.status(200).send(user);
         } catch (ex) {
-            res.status(ex.status).send(ex);
+            res.status(500).send(ex);
         }
     }
     else res.status(400).send(new CustomError(400, 'Please enter all details'));
@@ -24,7 +24,7 @@ router.post('/signin', async (req, res) => {
             const user = await authService.signIn(email, password);
             res.status(200).send(user);
         } catch (ex) {
-            res.status(ex.status).send(ex);
+            res.status(500).send(ex);
         }
     }
     else res.status(400).send(new CustomError(400, 'Please enter all details'));
